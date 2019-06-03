@@ -1,4 +1,10 @@
-/* html, body {
+html, body {
     margin: 5px;
     padding: 0;
-} */
+}
+#canvas{
+	width: 600px;
+	padding: 200px 20px;
+	text-align: center;
+	border: 1px solid blue;
+}
