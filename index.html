@@ -6,17 +6,26 @@
 		<script src="Vue2.6.10.js"></script>
 	</head>
 	
-	<body>
-		<br />
-		
+	<body>		
 		<hr />
+		<h1>事件修饰符.stop.prevent.capture.self.once.passive</h1>
 		<div id="vue-app">
-				<h1>{{ hello('Mad.Max') }}</h1>
-				<p>Name: {{ name }}</p>
-				<a v-bind:href="website">百度</a>
-				<input type="text" v-bind:value="name" >
-				<p v-html="websiteTag" ></p>				
-				
+<!-- 			@和v-on调用函数都可以实现； -->
+			<button @click.once="add">加一岁</button>
+			<button @dblclick="add(10)">双击加十岁</button>
+			<p>My age is {{ age }}</p>
+			<button v-on:click="minus(1)">减一岁</button>
+			<button v-on:dblclick="minus(10)">双击减十岁</button>
+			<hr />
+			
+			<div id="canvas" v-on:mousemove="updateXY">
+				{{ x }},{{ y }}
+				<span id="stoparea1" @mousemove="stopmove">停止方法</span>
+				<span id="stoparea2" @mousemove.stop>.stop等效于停止方法</span>
+			</div>
+<!-- 			.prevent:组织动作 -->
+			<a href="https://www.baidu.com" @click.prevent ="alert">baidu</a>
+			
 		</div>
 		<script src="app.js"></script>
 
