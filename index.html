@@ -8,13 +8,17 @@
 	
 	<body>		
 		<hr />
-		<h1>按键修饰符.enter.tab.delete (捕获“删除”和“退格”键).esc.space.up.down.left.right</h1>
-		
+		<h1>数据双向绑定 input,select,textarea</h1>
+		1:通过标签内ref——js内$refs双向绑定；<br />
+		2：通过v-model
 		<div id="vue-app">
 			<label>姓名：</label>
-			<input type="text"  @keyup.enter="logname"/>
+			<input type="text" v-model="name"/>
+			<span>{{ name }}</span>
+			<br />
 			<label>年龄：</label>
-			<input type="number" @keyup.alt.enter="logage()"/>
+			<input ref="age" type="number" @keyup.enter="logage"/>
+			<span>{{ age }}</span>
 			
 		</div>
 		<script src="app.js"></script>
