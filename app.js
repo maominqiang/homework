@@ -2,31 +2,14 @@
 new Vue({
   el: '#vue-app',
   data: {
-    age: 30,
-	x:0,
-	y:0,
+
   },
   methods:{
-	  add:function(num){
-		  if(num == 10){
-			  this.age+=num;
-		  }else{
-			this.age++;  
-		  }
+	  logname:function(){
+		  console.log("正在输入姓名");
 	  },
-	  minus:function(num){
-		  this.age-=num;
-	  },
-	  updateXY:function(event){
-		  // console.log(event);
-		  this.x = event.offsetX;
-		  this.y = event.offsetY;
-	  },
-	  stopmove:function(event){
-		  event.stopPropagation();//停止移动
-	  },
-	  alert:function(){
-		  alert(new Date());
+	  logage:function(){
+		  console.log("正在输入年龄");
 	  }
   }
 
